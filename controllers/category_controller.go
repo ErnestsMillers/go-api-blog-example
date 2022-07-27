@@ -13,42 +13,42 @@ func NewCategory(ctx *fiber.Ctx) error {
 		return ctx.Status(500).JSON(fiber.Map{"error": err.Error()})
 	}
 
-	Category, err := services.NewCategory(newCategory)
+	category, err := services.NewCategory(newCategory)
 	if err != nil {
 		return ctx.Status(500).JSON(fiber.Map{"error": err.Error()})
 	}
 
-	return ctx.JSON(Category)
+	return ctx.JSON(category)
 }
 
 func GetCategory(ctx *fiber.Ctx) error {
-	Category, err := services.GetCategory(ctx.Params("id"))
+	category, err := services.GetCategory(ctx.Params("id"))
 	if err != nil {
 		return ctx.Status(404).JSON(fiber.Map{"error": err.Error()})
 	}
-	return ctx.JSON(Category)
+	return ctx.JSON(category)
 }
 
 func GetCategories(ctx *fiber.Ctx) error {
-	Categories, err := services.GetCategories()
+	categories, err := services.GetCategories()
 	if err != nil {
 		return ctx.Status(404).JSON(fiber.Map{"error": err.Error()})
 	}
-	return ctx.JSON(Categories)
+	return ctx.JSON(categories)
 }
 
 func UpdateCategory(ctx *fiber.Ctx) error {
-	var Category *entities.Category
-	if err := ctx.BodyParser(&Category); err != nil {
+	var category *entities.Category
+	if err := ctx.BodyParser(&category); err != nil {
 		return ctx.Status(500).JSON(fiber.Map{"error": err.Error()})
 	}
 
-	Category, err := services.UpdateCategory(Category, ctx.Params("id"))
+	category, err := services.UpdateCategory(category, ctx.Params("id"))
 	if err != nil {
 		return ctx.Status(404).JSON(fiber.Map{"error": err.Error()})
 	}
 
-	return ctx.JSON(Category)
+	return ctx.JSON(category)
 }
 
 func DeleteCategory(ctx *fiber.Ctx) error {
