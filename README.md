@@ -61,7 +61,7 @@
 
   ```
 
-  #### Delete a prpostoduct by id:
+  #### Delete a post by id:
   ```bash
   # DELETE /api/v1/post/1
 
@@ -70,4 +70,13 @@
 
   ```
 
-#### Same goes for categories
+#### Categories have the same setup such as
+
+  #### Delete a cateogry by id:
+  ```bash
+  # DELETE /api/v1/category/1
+
+  $ curl --request DELETE \
+  --url http://localhost:3000/api/v1/category/1
+
+  ```
