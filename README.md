@@ -13,6 +13,11 @@
   $ go run main.go
   ```
 
+# Known Problems:
+
+1. No Tests
+2. A repository pattern, hardcoded status codes, better API response handler
+
 - ## API
   #### Create a new post:
   ```bash
@@ -70,9 +75,8 @@
 
   ```
 
-#### Categories have the same setup such as
-
-  #### Delete a cateogry by id:
+  #### Categories have the same setup such as
+  #### Delete a category by id:
   ```bash
   # DELETE /api/v1/category/1
 
